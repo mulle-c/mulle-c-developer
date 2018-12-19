@@ -1,3 +1,7 @@
+### 0.9.1
+
+* fix installer one more time
+
 ## 0.9.0
 
 * support triple phase
