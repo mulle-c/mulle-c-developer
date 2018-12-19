@@ -1,3 +1,7 @@
+### 0.9.3
+
+* fix travis
+
 ### 0.9.2
 
 * make installer executabe duh...
