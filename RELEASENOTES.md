@@ -1,3 +1,7 @@
+### 0.9.2
+
+* make installer executabe duh...
+
 ### 0.9.1
 
 * fix installer one more time

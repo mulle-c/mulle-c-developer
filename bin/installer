@@ -174,7 +174,7 @@ main()
    share="${prefix}/share/mulle-sde"
    EXTENSION_DIR="${share}/extensions"
    mkdir -p "${EXTENSION_DIR}" 2> /dev/null
-   cp -Rav "src/mulle-c" "${EXTENSION_DIR}/" || exit 1
+   cp -Rav "src/mulle-c" "${EXTENSION_DIR}/" || installer_fail "copy to ${EXTENSION_DIR} failed"
 }
 
 main "$@"
