@@ -6,5 +6,5 @@ endif()
 
 include( LinkManifestC)
 
-include( PostLibraryCAux OPTIONAL)
+include( PostLibraryAuxC OPTIONAL)
 

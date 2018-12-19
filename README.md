@@ -72,7 +72,7 @@ SDE_PROJECTS="mulle-sde-developer;latest" ./installer-all ~ no
 Check that the (meta) extensions are found:
 
 ```
-mulle-sde extension list
+mulle-sde extension show
 ```
 
 ## Create an executable mulle-c project
