@@ -1,3 +1,7 @@
+### 0.9.6
+
+* fix recommends for debian
+
 ### 0.9.5
 
 * improve README

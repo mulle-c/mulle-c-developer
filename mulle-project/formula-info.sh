@@ -20,4 +20,4 @@ DEPENDENCIES='${MULLE_SDE_TAP}mulle-sde-developer
 ${MULLE_SDE_TAP}mulle-test'
 
 DEBIAN_DEPENDENCIES='mulle-sde-developer'
-DEBIAN_RECOMMENDATIONS='${MULLE_SDE_TAP}mulle-test'
+DEBIAN_RECOMMENDATIONS='mulle-test'
