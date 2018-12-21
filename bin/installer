@@ -162,7 +162,6 @@ main()
       installer_fail "\"${prefix}\" does not exist"
    fi
 
-
    local directory
 
    directory="`dirname -- "$0"`"
