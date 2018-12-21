@@ -1,3 +1,7 @@
+### 0.9.5
+
+* improve README
+
 ### 0.9.4
 
 * move dependency to future mulle-core-developer, fix STANDALONE library dependency

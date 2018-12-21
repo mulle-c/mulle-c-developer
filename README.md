@@ -1,25 +1,28 @@
 # 🧢 mulle-c developer kit for mulle-sde
 
-This is a [mulle-sde](/github.com/mulle-sde/mulle-sde) *meta extension*.
-It supplements **mulle-sde** with useful functionality for C development
-using mulle-c libraries.
+This developer kit adds unto [mulle-sde-developer](/github.com/mulle-sde/mulle-sde-developer) by adding more elaborate cmake templates. It is the basis for the more generally useful developer kits [mulle-core-developer](/github.com/mulle-core/mulle-core-developer), [mulle-objc-developer](/github.com/mulle-objc/mulle-objc-developer), [foundation-developer](/github.com/MulleFoundation/foundation-developer)
 
-It is also a convenient way to install mulle-sde. See
-[mulle-sde-developer](/github.com/mulle-sde/mulle-sde-developer) for more
-information about mulle-sde.
 
-Library                                                  | Description
----------------------------------------------------------|----------------------------
-[mulle-aba](//github.com/mulle-c/mulle-aba)              | Memory reclamation for concurrent algorithms
-[mulle-allocator](//github.com/mulle-c/mulle-allocator)  | Memory allocation and leak checking
-[mulle-buffer](//github.com/mulle-c/mulle-buffer)        | Memory storage and streams
-[mulle-c11](//github.com/mulle-c/mulle-c11)              | Compiler glue
-[mulle-concurrent](//github.com/mulle-c/mulle-concurrent)| Concurrent hashtable and array
-[mulle-container](//github.com/mulle-c/mulle-concurrent) | ObjC Foundation like data structures
-[mulle-sprintf](//github.com/mulle-c/mulle-sprintf )     | Extensible sprintf
-[mulle-thread](//github.com/mulle-c/mulle-thread)        | Threads and locks (C11/pthread)
-[mulle-utf](//github.com/mulle-c/mulle-utf )             | Unicode string library
-[mulle-vararg](//github.com/mulle-c/mulle-vararg )       | An alternative vararg scheme
+
+These templates enable you to
+
+* create standalone dynamic libraries, used by mulle-test
+* startup libraries, used by mulle-objc
+* use whole-archive linking, used by mulle-objc
+* tweak some compiler settings, like add -DNDEBUG for Release
+
+
+## Usage
+
+Check that the (meta) extensions are found with `mulle-sde extension show`
+
+### Create an executable mulle-c project
+
+`mulle-sde init -d hello-exe -m mulle-c/c-developer executable`
+
+### Create a library mulle-c project
+
+`mulle-sde init -d hello-lib -m mulle-c/c-developer library`
 
 
 ## Install
@@ -67,23 +70,4 @@ OTHER_PROJECTS="mulle-c/mulle-c-developer;latest" \
 SDE_PROJECTS="mulle-sde-developer;latest" ./installer-all ~ no
 ```
 
-# Usage
-
-Check that the (meta) extensions are found:
-
-```
-mulle-sde extension show
-```
-
-## Create an executable mulle-c project
-
-```
-mulle-sde init -d hello-exe -m mulle-c/c-developer executable
-```
-
-## Create a library mulle-c project
-
-```
-mulle-sde init -d hello-lib -m mulle-c/c-developer library
-```
 
