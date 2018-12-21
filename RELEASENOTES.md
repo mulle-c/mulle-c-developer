@@ -1,3 +1,11 @@
+### 0.9.4
+
+* move dependency to future mulle-core-developer, fix STANDALONE library dependency
+
+### 0.9.3
+
+* fix travis
+
 ### 0.9.2
 
 * make installer executabe duh...
