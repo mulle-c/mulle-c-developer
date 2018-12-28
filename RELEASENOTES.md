@@ -1,3 +1,7 @@
+### 0.9.7
+
+* no more LinkManifest as its no longer needed
+
 ### 0.9.6
 
 * fix recommends for debian
