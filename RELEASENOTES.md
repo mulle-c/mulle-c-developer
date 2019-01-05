@@ -1,3 +1,7 @@
+### 0.9.8
+
+* modernized to mulle-sde with .mulle folder
+
 ### 0.9.7
 
 * no more LinkManifest as its no longer needed
