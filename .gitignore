@@ -4,5 +4,5 @@
 tmp.*
 build/
 build-*.d/
-mulle-project/publisher-info.sh
+publisher-info.sh
 *.sublime-workspace
