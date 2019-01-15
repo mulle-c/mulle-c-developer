@@ -1,3 +1,7 @@
+### 0.9.9
+
+* improved compiler flag generation when no buildstyle is known
+
 ### 0.9.8
 
 * modernized to mulle-sde with .mulle folder
