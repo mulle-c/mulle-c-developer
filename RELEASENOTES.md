@@ -1,3 +1,7 @@
+### 0.9.10
+
+* fix non-overridable options
+
 ### 0.9.9
 
 * improved compiler flag generation when no buildstyle is known
