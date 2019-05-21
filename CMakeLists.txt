@@ -2,7 +2,7 @@ cmake_minimum_required( VERSION 3.0)
 
 project( mulle-c-developer NONE)
 
-set( PROJECT_VERSION 0.9.10)
+set( PROJECT_VERSION 0.10.0)
 
 set( EXTENSIONS
 src/  # backslash is important

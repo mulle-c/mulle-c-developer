@@ -3,6 +3,7 @@
 *.bak
 tmp.*
 build/
+kitchen/
 build-*.d/
 publisher-info.sh
 *.sublime-workspace

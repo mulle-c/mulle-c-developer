@@ -1,3 +1,17 @@
 mulle-c/c;runtime
 mulle-c/c-cmake;buildtool
 mulle-c/travis;extra
+
+
+
+#
+# Not using the \"inherit\" file" here, but specify
+# the dependencies like this, so we "clobber" what we
+# inherit as demofiles without overwriting existing
+# user files.
+#
+# Because of the quirky way mulle-sde does this, the
+# order is reversed.
+#
+mulle-sde/c-demo;extra
+mulle-c/c-demo;extra
