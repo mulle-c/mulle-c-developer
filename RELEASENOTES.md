@@ -1,3 +1,8 @@
+## 0.10.0
+
+* split up mulle-c into mulle-c/c-demo
+
+
 ### 0.9.10
 
 * fix non-overridable options
