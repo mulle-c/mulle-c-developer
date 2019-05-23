@@ -29,7 +29,7 @@ script:
    - mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d exe -m mulle-c/c-developer executable
    - cd exe
    - mulle-sde craft --release
-   - "./build/Release/exe"
+   - "./kitchen/Release/exe"
    - cd ..
    - mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d lib -m mulle-c/c-developer library
    - cd lib

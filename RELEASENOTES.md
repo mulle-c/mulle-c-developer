@@ -1,3 +1,7 @@
+### 0.10.1
+
+* fix travis
+
 ## 0.10.0
 
 * split up mulle-c into mulle-c/c-demo
