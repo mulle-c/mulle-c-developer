@@ -1,3 +1,8 @@
+## 0.11.0
+
+* death of StartupC
+
+
 ### 0.10.1
 
 * fix travis
