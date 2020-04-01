@@ -1,8 +1,5 @@
 mulle-c/c;runtime
 mulle-c/c-cmake;buildtool
-mulle-c/travis;extra
-
-
 
 #
 # Not using the \"inherit\" file" here, but specify
