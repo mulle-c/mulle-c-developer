@@ -101,6 +101,31 @@ before_install_main()
    export MULLE_HOSTNAME
 
    brew update
+
+   (
+      IFS=","
+      for package in ${PACKAGES}
+      do
+         case "${package}" in
+            /*)
+               brew install "${package:1}"
+            ;;
+
+            */*/*)
+               brew install "${package}"
+            ;;
+
+            */*)
+               brew install "${tapuser}/${package}"
+            ;;
+
+            *)
+               brew install "${tapuser}/${tapname}/${package}"
+            ;;
+
+         esac
+      done
+   )
 }
 
 before_install_main "$@"

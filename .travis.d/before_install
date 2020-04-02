@@ -108,6 +108,14 @@ before_install_main()
    get_mulle_kybernetik_gpg_key && \
    add_mulle_kybernetik_to_apt_sources "${release}" "${debname}" &&  \
    sudo apt-get update
+
+   (
+      IFS=","
+      for package in ${PACKAGES}
+      do
+         sudo apt-get -y "${package}"
+      done
+   )
 }
 
 before_install_main "$@"
