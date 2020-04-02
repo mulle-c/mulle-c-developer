@@ -113,7 +113,7 @@ before_install_main()
       IFS=","
       for package in ${PACKAGES}
       do
-         sudo apt-get -y "${package}"
+         sudo apt-get -y install "${package}"
       done
    )
 }
