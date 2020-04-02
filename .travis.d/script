@@ -4,9 +4,12 @@
 
 echo "MULLE_HOSTNAME=\"${MULLE_HOSTNAME}\"" 2>&1
 
-mulle-sde -v craft --serial || exit 1
-
-if [ -d test ]
-then
-   mulle-sde -v test --serial
-fi
+mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" extension show &&
+mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d exe -m mulle-c/c-developer executable &&
+cd exe &&
+mulle-sde craft --release &&
+"./kitchen/Release/exe" &&
+cd .. &&
+mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d lib -m mulle-c/c-developer library &&
+cd lib &&
+mulle-sde craft
