@@ -2,16 +2,6 @@ language: c
 
 if: NOT tag =~ .*-prerelease$
 
-addons:
-  apt:
-    packages:
-      - cmake
-      - cmake-data
-      - mulle-sde-developer
-  homebrew:
-    packages:
-      - mulle-sde-developer
-
 matrix:
   include:
     - os: linux
@@ -23,6 +13,16 @@ matrix:
     - os: osx
       before_install:
          - '[ ! -f .travis.d/before_install.darwin ] || source .travis.d/before_install.darwin'
+
+addons:
+  apt:
+    packages:
+      - cmake
+      - cmake-data
+      - mulle-sde-developer
+  homebrew:
+    packages:
+      - mulle-sde-developer
 
 
 # install:
