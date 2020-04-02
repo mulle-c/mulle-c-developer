@@ -101,7 +101,6 @@ before_install_main()
    export MULLE_HOSTNAME
 
    brew update
-   brew install "${tapuser}/${tapname}/mulle-sde-developer"
 }
 
 before_install_main "$@"
