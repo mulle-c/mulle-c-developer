@@ -1,29 +1,54 @@
 language: c
 
+if: NOT tag =~ .*-prerelease$
+
+addons:
+  apt:
+    packages:
+      - cmake
+      - cmake-data
+
 matrix:
   include:
     - os: linux
       dist: xenial
       sudo: required
       before_install:
-         - "curl -sS \"https://www.mulle-kybernetik.com/dists/debian-admin-pub.asc\" | sudo apt-key add -"
-         - echo "deb [arch=all] http://www.mulle-kybernetik.com `lsb_release -c -s` main" | sudo tee "/etc/apt/sources.list.d/mulle-kybernetik.com-main.list" > /dev/null
-         - sudo apt-get update
-         - sudo apt-get install -y mulle-sde-developer
+         - '[ ! -f .travis.d/before_install ]      || source .travis.d/before_install'
+         - '[ ! -f .travis.d/before_install_aux ]  || source .travis.d/before_install_aux'
+         - '[ ! -f .travis.d/before_install_user ] || source .travis.d/before_install_user'
 
     - os: osx
       before_install:
-        - "brew update"
-        - "brew install mulle-kybernetik/software/mulle-sde-developer"
+         - '[ ! -f .travis.d/before_install.darwin ]      || source .travis.d/before_install.darwin'
+         - '[ ! -f .travis.d/before_install_aux.darwin ]  || source .travis.d/before_install_aux.darwin'
+         - '[ ! -f .travis.d/before_install_user.darwin ] || source .travis.d/before_install_user.darwin'
 
+
+# install:
+#    - '[ ! -f .travis.d/install ] || source .travis.d/install'
+#
+# before_script:
+#    - '[ ! -f .travis.d/before_script ] || source .travis.d/before_script'
+#
 
 script:
-   - mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" extension show
-   - mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d exe -m mulle-c/c-developer executable
-   - cd exe
-   - mulle-sde craft --release
-   - "./kitchen/Release/exe"
-   - cd ..
-   - mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d lib -m mulle-c/c-developer library
-   - cd lib
-   - mulle-sde craft
+   - '[ ! -f .travis.d/script ] || source .travis.d/script'
+
+# before_cache:
+#    - '[ ! -f .travis.d/before_cache ] || source .travis.d/before_cache'
+#
+# after_success:
+#    - '[ ! -f .travis.d/after_success ] || source .travis.d/after_success'
+#
+# after_failure:
+#    - '[ ! -f .travis.d/after_failure ] || source .travis.d/after_failure'
+#
+# before_deploy:
+#    - '[ ! -f .travis.d/before_deploy ] || source .travis.d/before_deploy'
+#
+# after_deploy:
+#    - '[ ! -f .travis.d/after_deploy ] || source .travis.d/after_deploy'
+#
+# after_script:
+#    - '[ ! -f .travis.d/after_script ] || source .travis.d/after_script'
