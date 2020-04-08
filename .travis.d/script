@@ -4,11 +4,24 @@
 
 echo "MULLE_HOSTNAME=\"${MULLE_HOSTNAME}\"" 2>&1
 
-mulle-sde -v craft --serial || exit 1
-
-if [ -d test ]
-then
-   # here verbose is more distracting and duplicates much of what we've seen
-   mulle-sde test craft &&
-   mulle-sde -v test run --serial
-fi
+mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" extension show &&
+mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d exe -m mulle-c/c-developer executable &&
+cd exe &&
+(
+   echo "Adding environment-host-travis-ci-prerelease file from mulle-sprintf/test" >&2 &&
+   cd .mulle/etc/env &&
+   curl -L -O "https://raw.githubusercontent.com/mulle-core/mulle-sprintf/prerelease/.mulle/etc/env/environment-host-travis-ci-prerelease.sh" >&2
+) &&
+mulle-sde hostname &&
+mulle-sde environment &&
+mulle-sde craft --release &&
+"./kitchen/Release/exe" &&
+cd .. &&
+mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d lib -m mulle-c/c-developer library &&
+cd lib &&
+(
+   echo "Adding environment-host-travis-ci-prerelease file from mulle-sprintf/test" >&2 &&
+   cd .mulle/etc/env &&
+   curl -L -O "https://raw.githubusercontent.com/mulle-core/mulle-sprintf/prerelease/test/.mulle/etc/env/environment-host-travis-ci-prerelease.sh" >&2
+) &&
+mulle-sde craft
