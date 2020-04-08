@@ -4,12 +4,11 @@
 
 echo "MULLE_HOSTNAME=\"${MULLE_HOSTNAME}\"" 2>&1
 
-mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" extension show &&
-mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d exe -m mulle-c/c-developer executable &&
-cd exe &&
-mulle-sde craft --release &&
-"./kitchen/Release/exe" &&
-cd .. &&
-mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d lib -m mulle-c/c-developer library &&
-cd lib &&
-mulle-sde craft
+mulle-sde -v craft --serial || exit 1
+
+if [ -d test ]
+then
+   # here verbose is more distracting and duplicates much of what we've seen
+   mulle-sde test craft &&
+   mulle-sde -v test run --serial
+fi
