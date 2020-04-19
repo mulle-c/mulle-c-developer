@@ -3,12 +3,12 @@
 🧢  mulle-c developer kit for mulle-sde
 
 This developer kit adds unto
-[mulle-sde-developer](/github.com/mulle-sde/mulle-sde-developer)
+[mulle-sde-developer](/mulle-sde/mulle-sde-developer)
 by adding more elaborate cmake templates. It is the basis for the more
 generally useful developer kits
-[mulle-core-developer](/github.com/mulle-core/mulle-core-developer),
-[mulle-objc-developer](/github.com/mulle-objc/mulle-objc-developer),
-[foundation-developer](/github.com/MulleFoundation/foundation-developer)
+[mulle-core-developer](/mulle-core/mulle-core-developer),
+[mulle-objc-developer](/mulle-objc/mulle-objc-developer),
+[foundation-developer](/MulleFoundation/foundation-developer)
 
 
 These templates enable you to
