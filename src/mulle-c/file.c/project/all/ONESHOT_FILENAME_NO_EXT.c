@@ -4,8 +4,7 @@
 #include "include-private.h"
 
 
-void   <|ONESHOT_DOWNCASE_IDENTIFIER|>( void)
+void   <|ONESHOT_IDENTIFIER|>( void)
 {
 }
-
 <|FOOTER|>
