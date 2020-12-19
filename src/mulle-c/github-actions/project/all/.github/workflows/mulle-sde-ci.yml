@@ -14,11 +14,14 @@ jobs:
         os: [ macos-latest, ubuntu-latest]
 
     steps:
+<<<<<<< HEAD
     - name: Set MULLE_HOSTNAME
       run: |
         name="${GITHUB_REF##*/}"
         echo "MULLE_HOSTNAME=ci-${name##*-}" >> $GITHUB_ENV
 
+=======
+>>>>>>> prerelease
     - uses: actions/checkout@v2
 
     - uses: mulle-sde/github-ci@v1
@@ -26,8 +29,13 @@ jobs:
     - name: Add to path
       run:  echo "$HOME/bin" >> $GITHUB_PATH
 
+<<<<<<< HEAD
     - name: Dump Environment
       run:  env | sort
+=======
+    - name: Dump Build Environment
+      run:  env
+>>>>>>> prerelease
 
     - name: Mulle-SDE Fetch
       run: mulle-sde fetch
@@ -36,5 +44,9 @@ jobs:
       run: mulle-sde craft --${BUILD_TYPE:-release}
 
     - name: Mulle-SDE Test
+<<<<<<< HEAD
       run: |
         [ ! -d test ] || mulle-sde test
+=======
+      run: mulle-sde test
+>>>>>>> prerelease
