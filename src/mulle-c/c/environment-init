@@ -1,0 +1,4 @@
+#
+# mulle-c and mulle-objc projects have an actual latest tag, so don't resolve
+#
+MULLE_SOURCETREE_RESOLVE_TAG="NO"
