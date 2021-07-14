@@ -4,16 +4,23 @@ on: [push]
 
 env:
   BUILD_TYPE: release
-  OTHER_PROJECTS: "mulle-c/mulle-c-developer;"
 
 jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-latest]
+        os: [ macos-latest, ubuntu-latest]
 
     steps:
+    - name: Update stuff (for act)
+      if: ${{ env.ACT }}
+      run: apt-get update
+
+    - name: Install stuff (for act)
+      if: ${{ env.ACT }}
+      run: apt-get -y install cmake curl uuid-runtime
+
     - name: Set MULLE_HOSTNAME
       run: |
         name="${GITHUB_REF##*/}"
@@ -29,27 +36,12 @@ jobs:
     - name: Dump Environment
       run:  env | sort
 
-    - name: List extensions
-      run: |
-        mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" extension show
+    - name: Mulle-SDE Fetch
+      run: mulle-sde fetch
 
-    - name: mulle-c Library
-      run: |
-        mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d lib -m mulle-c/c-developer library &&
-        cd lib &&
-        mulle-sde hostname &&
-        mulle-sde environment &&
-        echo "Adding environment-host-ci-prerelease file from MulleObjC/test" >&2 &&
-        curl -L --output .mulle/etc/env/environment-host-ci-prerelease.sh "https://raw.githubusercontent.com/mulle-objc/MulleObjC/prerelease/test/.mulle/etc/env/environment-host-ci-prerelease.sh" >&2 &&
-        mulle-sde craft
+    - name: Mulle-SDE Craft
+      run: mulle-sde craft --${BUILD_TYPE:-release}
 
-    - name: mulle-c Executable
+    - name: Mulle-SDE Test
       run: |
-        mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" extension show &&
-        mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d exe -m mulle-c/c-developer executable &&
-        cd exe &&
-        echo "Adding environment-host-ci-prerelease file from MulleObjC/test" >&2 &&
-        curl -L --output .mulle/etc/env/environment-host-ci-prerelease.sh "https://raw.githubusercontent.com/mulle-objc/MulleObjC/prerelease/test/.mulle/etc/env/environment-host-ci-prerelease.sh" >&2 &&
-        mulle-sde craft --release &&
-        "./kitchen/Release/exe"
-
+        [ ! -d test ] || mulle-sde test
