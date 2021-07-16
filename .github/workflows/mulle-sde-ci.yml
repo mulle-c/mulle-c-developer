@@ -19,7 +19,7 @@ jobs:
 
     - name: Install stuff (for act)
       if: ${{ env.ACT }}
-      run: apt-get -y install cmake curl uuid-runtime
+      run: apt-get -y install cmake curl lsb-release uuid-runtime
 
     - name: Set MULLE_HOSTNAME
       run: |
