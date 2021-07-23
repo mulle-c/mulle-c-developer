@@ -1,3 +1,7 @@
+### 0.13.2
+
+* Various small improvements
+
 ### 0.13.1
 
 * added github-actions
