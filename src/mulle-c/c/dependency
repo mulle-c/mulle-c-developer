@@ -1,0 +1,10 @@
+# mulle-concurrent -> mulle-aba -> mulle-allocator -> mulle-thread -> mulle-c11
+--marks 'no-all-load' https://github.com/mulle-c/mulle-concurrent/archive/latest.tar.gz
+
+--marks 'no-all-load' https://github.com/mulle-c/mulle-container/archive/latest.tar.gz
+
+# mulle-sprintf -> mulle-buffer 
+#               -> mulle-utf 
+#               -> mulle-vararg 
+--marks 'no-all-load' https://github.com/mulle-c/mulle-sprintf/archive/latest.tar.gz
+
