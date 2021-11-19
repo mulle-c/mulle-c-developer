@@ -2,13 +2,7 @@ mulle-c/c;runtime
 mulle-c/c-cmake;buildtool
 
 #
-# Not using the \"inherit\" file" here, but specify
-# the dependencies like this, so we "clobber" what we
-# inherit as demofiles without overwriting existing
-# user files.
+# We don't inherit mulle-sde anymore, because it doesn't have mulle-c11
+# and we want to use MULLE_C_GLOBAL_EXTERN
 #
-# Because of the quirky way mulle-sde does this, the
-# order is reversed.
-#
-mulle-sde/c-demo;extra
 mulle-c/c-demo;extra
