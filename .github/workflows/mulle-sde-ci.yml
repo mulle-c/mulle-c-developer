@@ -38,7 +38,7 @@ jobs:
 
     - name: mulle-c Library
       run: |
-        mulle-sde -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d lib -m mulle-c/c-developer library &&
+        mulle-sde -vvv -ld -lx -DMULLE_SDE_EXTENSION_BASE_PATH="${PWD}/src" init -d lib -m mulle-c/c-developer library &&
         cd lib &&
         mulle-sde hostname &&
         mulle-sde environment &&
