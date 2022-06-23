@@ -7,3 +7,6 @@ kitchen/
 build-*.d/
 publisher-info.sh
 *.sublime-workspace
+.mulle-make-build-dir
+version.old
+.gdb_history

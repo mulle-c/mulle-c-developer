@@ -1,3 +1,10 @@
+## 0.15.0
+
+* changes for Windows support
+* define `-DMULLE_INCLUDE_DYNAMIC=1` if `BUILD_SHARED_LIBS` is defined
+* improved generation of Library identifiers
+
+
 ## 0.14.0
 
 * Various small improvements

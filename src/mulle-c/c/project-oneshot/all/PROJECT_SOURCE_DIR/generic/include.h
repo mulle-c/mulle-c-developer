@@ -1,6 +1,11 @@
 #ifndef <|PROJECT_DOWNCASE_IDENTIFIER|>_include_h__
 #define <|PROJECT_DOWNCASE_IDENTIFIER|>_include_h__
 
+// this is a global symbol that is exposed, which can be used to detect
+// if this library is available
+
+#define HAVE_INCLUDE_<|PROJECT_UPCASE_IDENTIFIER|>
+
 /* DO:    #include this files in public headers.
 
    DONT:  #include this files in private headers.
@@ -25,8 +30,14 @@
 
 #include "_<|PROJECT_NAME|>-include.h"
 
-#ifndef <|PROJECT_UPCASE_IDENTIFIER|>_EXTERN_GLOBAL
-# define <|PROJECT_UPCASE_IDENTIFIER|>_EXTERN_GLOBAL  MULLE_C_EXTERN_GLOBAL
+#ifdef <|PROJECT_UPCASE_IDENTIFIER|>_BUILD
+# define <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL    MULLE_C_GLOBAL
+#else
+# if defined( <|PROJECT_UPCASE_IDENTIFIER|>_INCLUDE_DYNAMIC) || (defined( MULLE_INCLUDE_DYNAMIC) && ! defined( <|PROJECT_UPCASE_IDENTIFIER|>_INCLUDE_STATIC))
+#  define <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL   MULLE_C_GLOBAL
+# else
+#  define <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL   extern
+# endif
 #endif
 
 /* You can add some more include statements here */
