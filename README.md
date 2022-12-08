@@ -25,11 +25,15 @@ Check that the (meta) extensions are found with `mulle-sde extension show`
 
 ### Create an executable mulle-c project
 
-`mulle-sde init -d hello-exe -m mulle-c/c-developer executable`
+``` sh
+mulle-sde init -d hello-exe -m mulle-c/c-developer executable
+```
 
 ### Create a library mulle-c project
 
-`mulle-sde init -d hello-lib -m mulle-c/c-developer library`
+``` sh 
+mulle-sde init -d hello-lib -m mulle-c/c-developer library
+```
 
 
 ## Install
@@ -61,7 +65,7 @@ This is suitable for environments without supported package managers:
 
 #### Install into /usr with sudo
 
-```
+``` sh
 curl -L -O '//raw.githubusercontent.com/mulle-sde/mulle-sde/release/bin/installer-all' && \
 chmod 755 installer-all && \
 sudo OTHER_PROJECTS="mulle-c/mulle-c-developer;latest" \
@@ -70,7 +74,7 @@ SDE_PROJECTS="mulle-sde-developer;latest" ./installer-all /usr
 
 #### Install into ${HOME} (without sudo)
 
-```
+``` sh
 curl -L -O '//raw.githubusercontent.com/mulle-sde/mulle-sde/release/bin/installer-all' && \
 chmod 755 installer-all && \
 OTHER_PROJECTS="mulle-c/mulle-c-developer;latest" \
