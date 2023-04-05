@@ -1,0 +1,15 @@
+## Usage
+
+Check that the (meta) extensions are found with `mulle-sde extension show`
+
+### Create an executable mulle-c project
+
+``` sh
+mulle-sde init -d hello-exe -m mulle-c/c-developer executable
+```
+
+### Create a library mulle-c project
+
+``` sh 
+mulle-sde init -d hello-lib -m mulle-c/c-developer library
+```

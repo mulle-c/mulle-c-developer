@@ -12,3 +12,6 @@ version.old
 .gdb_history
 .ackrc
 var/
+wilted/
+mulle-template-composer-*
+mulle-markdown-preview-*.html

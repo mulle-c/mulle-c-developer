@@ -1,0 +1,13 @@
+This developer kit adds unto
+[mulle-sde-developer](//github.com/mulle-sde/mulle-sde-developer)
+by adding more elaborate cmake templates. It is the basis for more
+generally useful developer kits like
+[mulle-objc-developer](//github.com/mulle-objc/mulle-objc-developer) or
+[foundation-developer](//github.com/MulleFoundation/foundation-developer)
+
+These templates enable you to:
+
+* create standalone dynamic libraries, used by mulle-test
+* startup libraries, used by mulle-objc
+* use whole-archive linking, used by mulle-objc
+* tweak some compiler settings, like add -DNDEBUG for Release

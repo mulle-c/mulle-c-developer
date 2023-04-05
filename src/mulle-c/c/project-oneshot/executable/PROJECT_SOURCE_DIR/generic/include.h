@@ -1,6 +1,8 @@
 #ifndef <|PROJECT_DOWNCASE_IDENTIFIER|>_include_h__
 #define <|PROJECT_DOWNCASE_IDENTIFIER|>_include_h__
 
+#define HAVE_INCLUDE_<|PROJECT_UPCASE_IDENTIFIER|>
+
 /* This is a central include file to keep dependencies out of the library
    C files. It is usally included by .h files only.
 
