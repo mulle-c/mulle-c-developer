@@ -2,16 +2,15 @@
 
 #### 🧢 mulle-c developer kit for mulle-sde
 
-# mulle-c-developer
-#### 🧢  mulle-c developer kit for mulle-sde
 This developer kit adds unto
 [mulle-sde-developer](//github.com/mulle-sde/mulle-sde-developer)
-by adding more elaborate cmake templates. It is the basis for the more
-generally useful developer kits
-[mulle-core-developer](//github.com/mulle-core/mulle-core-developer),
-[mulle-objc-developer](//github.com/mulle-objc/mulle-objc-developer),
+by adding more elaborate cmake templates. It is the basis for more
+generally useful developer kits like
+[mulle-objc-developer](//github.com/mulle-objc/mulle-objc-developer) or
 [foundation-developer](//github.com/MulleFoundation/foundation-developer)
-These templates enable you to
+
+These templates enable you to:
+
 * create standalone dynamic libraries, used by mulle-test
 * startup libraries, used by mulle-objc
 * use whole-archive linking, used by mulle-objc
@@ -24,15 +23,26 @@ These templates enable you to
 
 
 ## Usage
+
 Check that the (meta) extensions are found with `mulle-sde extension show`
+
 ### Create an executable mulle-c project
+
 ``` sh
 mulle-sde init -d hello-exe -m mulle-c/c-developer executable
 ```
+
 ### Create a library mulle-c project
+
 ``` sh 
 mulle-sde init -d hello-lib -m mulle-c/c-developer library
 ```
+
+
+### You are here
+
+![Overview](overview.dot.svg)
+
 
 
 
@@ -81,8 +91,10 @@ cmake --build build --config Release &&
 cmake --install build --config Release
 ```
 
+
 ## Author
 
 [Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK
+
 
 
