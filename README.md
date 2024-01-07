@@ -17,9 +17,10 @@ These templates enable you to:
 * tweak some compiler settings, like add -DNDEBUG for Release
 
 
+
 | Release Version                                       | Release Notes
 |-------------------------------------------------------|--------------
-| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-c/mulle-c-developer.svg?branch=release) [![Build Status](https://github.com/mulle-c/mulle-c-developer/workflows/CI/badge.svg?branch=release)](//github.com/mulle-c/mulle-c-developer/actions)| [RELEASENOTES](RELEASENOTES.md) |
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-c/mulle-c-developer.svg?branch=release) [![Build Status](https://github.com/mulle-c/mulle-c-developer/workflows/CI/badge.svg?branch=release)](//github.com/mulle-c/mulle-c-developer/actions) | [RELEASENOTES](RELEASENOTES.md) |
 
 
 
@@ -104,7 +105,7 @@ cmake --install build --config Release
 
 ## Author
 
-[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK
+[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK  
 
 
 

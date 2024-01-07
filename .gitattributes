@@ -8,6 +8,7 @@
 
 # remove boring files
 .mulle/**   linguist-generated
+.idea/**    linguist-generated
 .vscode/**  linguist-generated
 cmake/**    linguist-generated
 
