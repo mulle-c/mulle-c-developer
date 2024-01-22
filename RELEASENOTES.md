@@ -1,3 +1,7 @@
+### 0.17.1
+
+* Various small improvements
+
 ## 0.17.0
 
 * use UL versions now
