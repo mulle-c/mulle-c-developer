@@ -1,3 +1,8 @@
+## 0.18.0
+
+* minor bugfix and updates such as version increments
+
+
 ### 0.17.1
 
 * Various small improvements
