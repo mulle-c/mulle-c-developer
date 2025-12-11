@@ -17,7 +17,9 @@ DESC="🧢 mulle-c developer kit for mulle-sde"
 # So keep them single quoted.
 #
 DEPENDENCIES='${MULLE_SDE_TAP}mulle-sde-developer
-${MULLE_SDE_TAP}mulle-test'
+${MULLE_SDE_TAP}mulle-test
+${MULLE_SDE_TAP}mulle-todo'
 
 DEBIAN_DEPENDENCIES='mulle-sde-developer'
-DEBIAN_RECOMMENDATIONS='mulle-test'
+DEBIAN_RECOMMENDATIONS='mulle-test
+mulle-todo'
