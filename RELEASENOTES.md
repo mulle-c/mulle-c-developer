@@ -1,3 +1,11 @@
+## 0.19.0
+
+
+
+* whole-archive linking now works with lld linker
+* detection of linker capabilities prevents unsupported flags
+
+
 ### 0.18.1
 
 Various small improvements
