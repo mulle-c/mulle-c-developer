@@ -4,7 +4,7 @@
 #define HAVE_INCLUDE_<|PROJECT_UPCASE_IDENTIFIER|>
 
 /* This is a central include file to keep dependencies out of the library
-   C files. It is usally included by .h files only.
+   C files. It is usually included by .h files only.
 
    The advantage is that now .c and .h files become motile. They can
    be moved to other projects and don't need to be edited. Also less typing...
@@ -23,16 +23,33 @@
 
 #include "_<|PROJECT_NAME|>-include.h"
 
+// this is for WIN32: specify global non-inlined functions and variables
+// like this (can not be declared inside functions!)
+//
+// .h:
+// #include "include.h"
+// <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL char *   aGlobalString;
+// <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL void     aGlobalFunction( void);
+//
+// .c:
+// #include "include-private.h"
+// <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL_VAR
+// char *  aGlobalString = "VfL Bochum 1848";
+// <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL
+// void   aGlobalFunction( void) {}
+//
 #ifndef <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL
 # ifdef <|PROJECT_UPCASE_IDENTIFIER|>_BUILD
-#  define <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL    MULLE_C_GLOBAL
+#  define <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL       MULLE_C_GLOBAL
+#  define <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL_VAR   MULLE_C_GLOBAL
 # else
 #  if defined( <|PROJECT_UPCASE_IDENTIFIER|>_INCLUDE_DYNAMIC) || (defined( MULLE_INCLUDE_DYNAMIC) && ! defined( <|PROJECT_UPCASE_IDENTIFIER|>_INCLUDE_STATIC))
-#   define <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL   MULLE_C_GLOBAL
+#   define <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL      MULLE_C_GLOBAL
 #  else
-#   define <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL   extern
+#   define <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL      extern
 #  endif
 # endif
+# define <|PROJECT_UPCASE_IDENTIFIER|>_GLOBAL_VAR    MULLE_C_GLOBAL
 #endif
 
 /* You can add some more include statements here */

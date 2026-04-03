@@ -6,7 +6,7 @@
 #include <stdint.h>
 
 /*
- *  (c) <|YEAR|> <|USER|> <|ORGANIZATION|>
+ *  (c) 2025 <|USER|> <|ORGANIZATION|>
  *
  *  version:  major, minor, patch
  */

@@ -28,3 +28,5 @@ test*/**/*.test.*
 !/README.md
 build-55fd/
 environment-user-*.sh
+.roam
+.graveyard
