@@ -7,6 +7,7 @@
       user="mulle-c";
       repo="mulle-c-developer";
       homepage="https://github.com/mulle-c/mulle-c-developer";
-      license="BSD-3-Clause"
+      license="BSD-3-Clause";
+      version="0.20.0"
    };
 }
