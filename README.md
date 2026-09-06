@@ -20,6 +20,11 @@ These templates enable you to:
 
 
 
+
+## Documentation & Guides
+
+* [API Summary](asset/dox/api/toc)
+
 ## Usage
 
 Check that the (meta) extensions are found with `mulle-sde extension show`
